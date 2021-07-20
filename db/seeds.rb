@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'faker'
+
+5.times do 
+    student = {}
+    user = Faker::TvShows::FamilyGuy.character.split(" ")
+    student[:first_name] = user.first
+    student[:last_name] = user.last
+    student[:active] = Faker::Boolean.boolean
+    Student.create(student)
+end
